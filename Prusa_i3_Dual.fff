@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<profile name="Prusa i3 Dual" version="2018-03-07 21:13:57" app="S3D-Software 4.0.1">
+<profile name="Prusa i3 Dual" version="2018-03-11 15:23:14" app="S3D-Software 4.0.1">
   <baseProfile>Default</baseProfile>
   <printMaterial>PLA</printMaterial>
   <printQuality>Medium</printQuality>
@@ -36,7 +36,7 @@
     <useWipe>1</useWipe>
     <wipeDistance>5</wipeDistance>
   </extruder>
-  <primaryExtruder>1</primaryExtruder>
+  <primaryExtruder>0</primaryExtruder>
   <layerHeight>0.2</layerHeight>
   <topSolidLayers>4</topSolidLayers>
   <bottomSolidLayers>4</bottomSolidLayers>
@@ -50,7 +50,7 @@
   <firstLayerHeightPercentage>50</firstLayerHeightPercentage>
   <firstLayerWidthPercentage>100</firstLayerWidthPercentage>
   <firstLayerUnderspeed>0.5</firstLayerUnderspeed>
-  <useRaft>1</useRaft>
+  <useRaft>0</useRaft>
   <raftExtruder>0</raftExtruder>
   <raftTopLayers>3</raftTopLayers>
   <raftBaseLayers>2</raftBaseLayers>
@@ -75,7 +75,7 @@
   <oozeShieldSidewallShape>1</oozeShieldSidewallShape>
   <oozeShieldSidewallAngle>30</oozeShieldSidewallAngle>
   <oozeShieldSpeedMultiplier>1</oozeShieldSpeedMultiplier>
-  <infillExtruder>1</infillExtruder>
+  <infillExtruder>0</infillExtruder>
   <internalInfillPattern>Rectilinear</internalInfillPattern>
   <externalInfillPattern>Rectilinear</externalInfillPattern>
   <infillPercentage>10</infillPercentage>
@@ -87,11 +87,11 @@
   <overlapInternalInfillAngles>0</overlapInternalInfillAngles>
   <externalInfillAngles>45,-45</externalInfillAngles>
   <generateSupport>0</generateSupport>
-  <supportExtruder>1</supportExtruder>
+  <supportExtruder>0</supportExtruder>
   <supportInfillPercentage>30</supportInfillPercentage>
   <supportExtraInflation>0</supportExtraInflation>
   <supportBaseLayers>0</supportBaseLayers>
-  <denseSupportExtruder>1</denseSupportExtruder>
+  <denseSupportExtruder>0</denseSupportExtruder>
   <denseSupportLayers>0</denseSupportLayers>
   <denseSupportInfillPercentage>70</denseSupportInfillPercentage>
   <supportLayerInterval>1</supportLayerInterval>
@@ -126,8 +126,8 @@
     <relayBetweenLayers>0</relayBetweenLayers>
     <relayBetweenLoops>0</relayBetweenLoops>
     <stabilizeAtStartup>1</stabilizeAtStartup>
-    <setpoint layer="1" temperature="65"/>
-    <setpoint layer="4" temperature="60"/>
+    <setpoint layer="1" temperature="70"/>
+    <setpoint layer="4" temperature="65"/>
   </temperatureController>
   <fanSpeed>
     <setpoint layer="1" speed="0"/>
@@ -155,9 +155,9 @@
   <gcodeZoffset>0</gcodeZoffset>
   <overrideMachineDefinition>1</overrideMachineDefinition>
   <machineTypeOverride>0</machineTypeOverride>
-  <strokeXoverride>200</strokeXoverride>
-  <strokeYoverride>200</strokeYoverride>
-  <strokeZoverride>180</strokeZoverride>
+  <strokeXoverride>186</strokeXoverride>
+  <strokeYoverride>183</strokeYoverride>
+  <strokeZoverride>190</strokeZoverride>
   <originOffsetXoverride>0</originOffsetXoverride>
   <originOffsetYoverride>0</originOffsetYoverride>
   <originOffsetZoverride>0</originOffsetZoverride>
@@ -251,8 +251,8 @@
       <relayBetweenLayers>0</relayBetweenLayers>
       <relayBetweenLoops>0</relayBetweenLoops>
       <stabilizeAtStartup>1</stabilizeAtStartup>
-      <setpoint layer="1" temperature="65"/>
-      <setpoint layer="4" temperature="60"/>
+      <setpoint layer="1" temperature="70"/>
+      <setpoint layer="4" temperature="65"/>
     </temperatureController>
     <extruder name="Extruder 1">
       <toolheadNumber>0</toolheadNumber>
@@ -370,12 +370,12 @@
     <toggleTemperatureController name="Extruder 2" status="on" stabilize="on"/>
   </autoConfigureExtruders>
   <autoConfigureExtruders name="All Extruders" allowedToolheads="2">
-    <primaryExtruder>1</primaryExtruder>
+    <primaryExtruder>0</primaryExtruder>
     <raftExtruder>0</raftExtruder>
     <skirtExtruder>0</skirtExtruder>
-    <infillExtruder>1</infillExtruder>
-    <supportExtruder>1</supportExtruder>
-    <denseSupportExtruder>1</denseSupportExtruder>
+    <infillExtruder>0</infillExtruder>
+    <supportExtruder>0</supportExtruder>
+    <denseSupportExtruder>0</denseSupportExtruder>
     <useSkirt>0</useSkirt>
     <usePrimePillar>0</usePrimePillar>
     <useOozeShield>1</useOozeShield>

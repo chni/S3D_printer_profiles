@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<profile name="E3D V6 Single" version="2018-02-25 16:15:24" app="S3D-Software 4.0.0">
+<profile name="E3D V6 Single" version="2018-03-11 15:40:45" app="S3D-Software 4.0.1">
   <baseProfile>Geeetech Prusa i3 (modified)</baseProfile>
   <printMaterial>PLA</printMaterial>
   <printQuality>High</printQuality>
@@ -130,9 +130,9 @@
   <gcodeZoffset>0</gcodeZoffset>
   <overrideMachineDefinition>1</overrideMachineDefinition>
   <machineTypeOverride>0</machineTypeOverride>
-  <strokeXoverride>200</strokeXoverride>
-  <strokeYoverride>200</strokeYoverride>
-  <strokeZoverride>180</strokeZoverride>
+  <strokeXoverride>186</strokeXoverride>
+  <strokeYoverride>183</strokeYoverride>
+  <strokeZoverride>190</strokeZoverride>
   <originOffsetXoverride>0</originOffsetXoverride>
   <originOffsetYoverride>0</originOffsetYoverride>
   <originOffsetZoverride>0</originOffsetZoverride>
