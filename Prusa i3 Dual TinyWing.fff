@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
-<profile name="Prusa i3 Dual" version="2018-09-29 15:48:33" app="S3D-Software 4.0.1">
+<profile name="Prusa i3 Dual TinyWing" version="2019-04-05 13:21:44" app="S3D-Software 4.0.1">
   <baseProfile>Default</baseProfile>
   <printMaterial>PLA</printMaterial>
   <printQuality>Medium</printQuality>
-  <printExtruders>All Extruders</printExtruders>
+  <printExtruders>Extruder 1 Only</printExtruders>
   <extruder name="Extruder 1">
     <toolheadNumber>0</toolheadNumber>
     <diameter>0.4</diameter>
@@ -38,8 +38,8 @@
   </extruder>
   <primaryExtruder>0</primaryExtruder>
   <layerHeight>0.2</layerHeight>
-  <topSolidLayers>4</topSolidLayers>
-  <bottomSolidLayers>4</bottomSolidLayers>
+  <topSolidLayers>0</topSolidLayers>
+  <bottomSolidLayers>0</bottomSolidLayers>
   <perimeterOutlines>2</perimeterOutlines>
   <printPerimetersInsideOut>1</printPerimetersInsideOut>
   <startPointOption>2</startPointOption>
@@ -59,7 +59,7 @@
   <raftTopInfill>100</raftTopInfill>
   <aboveRaftSpeedMultiplier>0.3</aboveRaftSpeedMultiplier>
   <useSkirt>1</useSkirt>
-  <skirtExtruder>999</skirtExtruder>
+  <skirtExtruder>0</skirtExtruder>
   <skirtLayers>2</skirtLayers>
   <skirtOutlines>2</skirtOutlines>
   <skirtOffset>4</skirtOffset>
@@ -68,7 +68,7 @@
   <primePillarWidth>12</primePillarWidth>
   <primePillarLocation>7</primePillarLocation>
   <primePillarSpeedMultiplier>1</primePillarSpeedMultiplier>
-  <useOozeShield>1</useOozeShield>
+  <useOozeShield>0</useOozeShield>
   <oozeShieldExtruder>999</oozeShieldExtruder>
   <oozeShieldOffset>2</oozeShieldOffset>
   <oozeShieldOutlines>1</oozeShieldOutlines>
@@ -86,7 +86,7 @@
   <internalInfillAngles>45,-45</internalInfillAngles>
   <overlapInternalInfillAngles>0</overlapInternalInfillAngles>
   <externalInfillAngles>45,-45</externalInfillAngles>
-  <generateSupport>1</generateSupport>
+  <generateSupport>0</generateSupport>
   <supportExtruder>0</supportExtruder>
   <supportInfillPercentage>30</supportInfillPercentage>
   <supportExtraInflation>0</supportExtraInflation>
@@ -116,9 +116,8 @@
     <isHeatedBed>0</isHeatedBed>
     <relayBetweenLayers>0</relayBetweenLayers>
     <relayBetweenLoops>0</relayBetweenLoops>
-    <stabilizeAtStartup>1</stabilizeAtStartup>
-    <setpoint layer="1" temperature="230"/>
-    <setpoint layer="4" temperature="220"/>
+    <stabilizeAtStartup>0</stabilizeAtStartup>
+    <setpoint layer="1" temperature="0"/>
   </temperatureController>
   <temperatureController name="Heated Bed">
     <temperatureNumber>0</temperatureNumber>
@@ -174,7 +173,7 @@
   <baudRateOverride>250000</baudRateOverride>
   <overridePrinterModels>0</overridePrinterModels>
   <printerModelsOverride></printerModelsOverride>
-  <startingGcode>M117 Autoleveling,G28 ; home all,G29 ; do Autolevel,G92 E0,G1 Z0.1 F1000,G1 X8.0 F2000,G1 Y60.0 E4.0 F1000.0 ; prime,G1 Y100.0 E8.5 F1000.0 ; prime,G92 E0,M117 Printing</startingGcode>
+  <startingGcode>G28 ; home all,G29 ; do Autolevel,G92 E0,G1 Z0.1 F1000,G1 X8.0 F2000,G1 Y60.0 E4.0 F1000.0 ; prime,G1 Y100.0 E8.5 F1000.0 ; prime,G92 E0</startingGcode>
   <layerChangeGcode>M117 Printing</layerChangeGcode>
   <retractionGcode>M117 Printing</retractionGcode>
   <toolChangeGcode>M117 Printing</toolChangeGcode>
@@ -327,8 +326,8 @@
   </autoConfigureQuality>
   <autoConfigureQuality name="Medium">
     <layerHeight>0.2</layerHeight>
-    <topSolidLayers>4</topSolidLayers>
-    <bottomSolidLayers>4</bottomSolidLayers>
+    <topSolidLayers>0</topSolidLayers>
+    <bottomSolidLayers>0</bottomSolidLayers>
     <skirtLayers>2</skirtLayers>
     <infillPercentage>100</infillPercentage>
     <supportInfillPercentage>30</supportInfillPercentage>
@@ -373,9 +372,9 @@
     <primaryExtruder>0</primaryExtruder>
     <raftExtruder>0</raftExtruder>
     <skirtExtruder>999</skirtExtruder>
-    <infillExtruder>0</infillExtruder>
-    <supportExtruder>0</supportExtruder>
-    <denseSupportExtruder>0</denseSupportExtruder>
+    <infillExtruder>1</infillExtruder>
+    <supportExtruder>1</supportExtruder>
+    <denseSupportExtruder>1</denseSupportExtruder>
     <useSkirt>1</useSkirt>
     <usePrimePillar>0</usePrimePillar>
     <useOozeShield>1</useOozeShield>
