@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
-<profile name="Prusa i3 Dual" version="2018-12-26 16:45:51" app="S3D-Software 4.0.1">
+<profile name="Prusa i3 Dual" version="2019-06-06 14:28:38" app="S3D-Software 4.1.2">
   <baseProfile>Default</baseProfile>
   <printMaterial>PLA</printMaterial>
   <printQuality>Medium</printQuality>
-  <printExtruders>Extruder 2 Only</printExtruders>
+  <printExtruders>All Extruders</printExtruders>
   <extruder name="Extruder 1">
     <toolheadNumber>0</toolheadNumber>
     <diameter>0.4</diameter>
@@ -36,7 +36,7 @@
     <useWipe>1</useWipe>
     <wipeDistance>5</wipeDistance>
   </extruder>
-  <primaryExtruder>1</primaryExtruder>
+  <primaryExtruder>0</primaryExtruder>
   <layerHeight>0.2</layerHeight>
   <topSolidLayers>4</topSolidLayers>
   <bottomSolidLayers>4</bottomSolidLayers>
@@ -47,11 +47,11 @@
   <startPointOriginY>0</startPointOriginY>
   <sequentialIslands>0</sequentialIslands>
   <spiralVaseMode>0</spiralVaseMode>
-  <firstLayerHeightPercentage>65</firstLayerHeightPercentage>
+  <firstLayerHeightPercentage>35</firstLayerHeightPercentage>
   <firstLayerWidthPercentage>100</firstLayerWidthPercentage>
   <firstLayerUnderspeed>0.35</firstLayerUnderspeed>
   <useRaft>0</useRaft>
-  <raftExtruder>1</raftExtruder>
+  <raftExtruder>0</raftExtruder>
   <raftTopLayers>3</raftTopLayers>
   <raftBaseLayers>2</raftBaseLayers>
   <raftOffset>3</raftOffset>
@@ -59,7 +59,7 @@
   <raftTopInfill>100</raftTopInfill>
   <aboveRaftSpeedMultiplier>0.3</aboveRaftSpeedMultiplier>
   <useSkirt>1</useSkirt>
-  <skirtExtruder>1</skirtExtruder>
+  <skirtExtruder>999</skirtExtruder>
   <skirtLayers>2</skirtLayers>
   <skirtOutlines>2</skirtOutlines>
   <skirtOffset>4</skirtOffset>
@@ -68,7 +68,7 @@
   <primePillarWidth>12</primePillarWidth>
   <primePillarLocation>7</primePillarLocation>
   <primePillarSpeedMultiplier>1</primePillarSpeedMultiplier>
-  <useOozeShield>0</useOozeShield>
+  <useOozeShield>1</useOozeShield>
   <oozeShieldExtruder>999</oozeShieldExtruder>
   <oozeShieldOffset>2</oozeShieldOffset>
   <oozeShieldOutlines>1</oozeShieldOutlines>
@@ -98,23 +98,20 @@
   <supportHorizontalPartOffset>0.3</supportHorizontalPartOffset>
   <supportUpperSeparationLayers>1</supportUpperSeparationLayers>
   <supportLowerSeparationLayers>1</supportLowerSeparationLayers>
-  <supportType>0</supportType>
+  <supportType>1</supportType>
   <supportGridSpacing>4</supportGridSpacing>
   <maxOverhangAngle>45</maxOverhangAngle>
   <supportAngles>0</supportAngles>
   <temperatureController name="Extruder 1">
     <temperatureNumber>0</temperatureNumber>
     <isHeatedBed>0</isHeatedBed>
-    <relayBetweenLayers>0</relayBetweenLayers>
-    <relayBetweenLoops>0</relayBetweenLoops>
-    <stabilizeAtStartup>0</stabilizeAtStartup>
-    <setpoint layer="1" temperature="0"/>
+    <stabilizeAtStartup>1</stabilizeAtStartup>
+    <setpoint layer="1" temperature="230"/>
+    <setpoint layer="4" temperature="220"/>
   </temperatureController>
   <temperatureController name="Extruder 2">
     <temperatureNumber>1</temperatureNumber>
     <isHeatedBed>0</isHeatedBed>
-    <relayBetweenLayers>0</relayBetweenLayers>
-    <relayBetweenLoops>0</relayBetweenLoops>
     <stabilizeAtStartup>1</stabilizeAtStartup>
     <setpoint layer="1" temperature="230"/>
     <setpoint layer="4" temperature="220"/>
@@ -122,8 +119,6 @@
   <temperatureController name="Heated Bed">
     <temperatureNumber>0</temperatureNumber>
     <isHeatedBed>1</isHeatedBed>
-    <relayBetweenLayers>0</relayBetweenLayers>
-    <relayBetweenLoops>0</relayBetweenLoops>
     <stabilizeAtStartup>1</stabilizeAtStartup>
     <setpoint layer="1" temperature="70"/>
     <setpoint layer="4" temperature="65"/>
@@ -173,11 +168,11 @@
   <baudRateOverride>250000</baudRateOverride>
   <overridePrinterModels>0</overridePrinterModels>
   <printerModelsOverride></printerModelsOverride>
-  <startingGcode>G28 ; home all,G29 ; do Autolevel,G92 E0,G1 Z0.1 F1000,G1 X8.0 F2000,G1 Y60.0 E4.0 F1000.0 ; prime,G1 Y100.0 E8.5 F1000.0 ; prime,G92 E0</startingGcode>
+  <startingGcode>M117 Autoleveling,G28 ; home all,G29 ; do Autolevel,G92 E0,G1 Z0.1 F1000,G1 X8.0 F2000,G1 Y60.0 E4.0 F1000.0 ; prime,G1 Y100.0 E8.5 F1000.0 ; prime,G92 E0,M117 Printing</startingGcode>
   <layerChangeGcode>M117 Printing</layerChangeGcode>
   <retractionGcode>M117 Printing</retractionGcode>
   <toolChangeGcode>M117 Printing</toolChangeGcode>
-  <endingGcode>M117 Cooling down,M140 S0 ; turn off bed,G91 ; use relative coordinates,G1 Z7 F5000 ; lift nozzle by 7mm,G90 ; use absolute coordinates,G28 X0 ; home X axis,G1 Y195 ; move Y axis to end position,,M104 S80 T0 ; cool down extruder ,M104 S80 T1 ; cool down extruder ,,M109 S80 T0 ; and wait till 80 deg,M109 S80 T1 ; and wait till 80 deg,,M106 S0; turn off fan,M104 S0 T0; turn off extruder,M104 S0 T1; turn off extruder,,M280 P0 S10 ; pushes the pin down ,,M84 ; disable motors,M107 ; turn off fan,M117 Print finished</endingGcode>
+  <endingGcode>M117 Cooling down,M140 S0 ; turn off bed,G91 ; use relative coordinates,G1 Z7 F5000 ; lift nozzle by 7mm,G90 ; use absolute coordinates,G28 X0 ; home X axis,G1 Y195 ; move Y axis to end position,,M104 S80 T0 ; cool down extruder ,M104 S80 T1 ; cool down extruder ,,M109 S80 T0 ; and wait till 80 deg,M109 S80 T1 ; and wait till 80 deg,,M106 S0; turn off fan,M104 S0 T0; turn off extruder,M104 S0 T1; turn off extruder,,M280 P0 S10 ; pushes the pin down ,,M84 ; disable motors,M107 ; turn off fan,M117 Print finished,M81 192.168.178.76 1 ;Switch off Power</endingGcode>
   <exportFileFormat>gcode</exportFileFormat>
   <celebration>0</celebration>
   <celebrationSong>Random Song</celebrationSong>
@@ -229,8 +224,6 @@
     <temperatureController name="Extruder 1">
       <temperatureNumber>0</temperatureNumber>
       <isHeatedBed>0</isHeatedBed>
-      <relayBetweenLayers>0</relayBetweenLayers>
-      <relayBetweenLoops>0</relayBetweenLoops>
       <stabilizeAtStartup>1</stabilizeAtStartup>
       <setpoint layer="1" temperature="230"/>
       <setpoint layer="4" temperature="220"/>
@@ -238,8 +231,6 @@
     <temperatureController name="Extruder 2">
       <temperatureNumber>1</temperatureNumber>
       <isHeatedBed>0</isHeatedBed>
-      <relayBetweenLayers>0</relayBetweenLayers>
-      <relayBetweenLoops>0</relayBetweenLoops>
       <stabilizeAtStartup>1</stabilizeAtStartup>
       <setpoint layer="1" temperature="230"/>
       <setpoint layer="4" temperature="220"/>
@@ -247,8 +238,6 @@
     <temperatureController name="Heated Bed">
       <temperatureNumber>0</temperatureNumber>
       <isHeatedBed>1</isHeatedBed>
-      <relayBetweenLayers>0</relayBetweenLayers>
-      <relayBetweenLoops>0</relayBetweenLoops>
       <stabilizeAtStartup>1</stabilizeAtStartup>
       <setpoint layer="1" temperature="70"/>
       <setpoint layer="4" temperature="65"/>
